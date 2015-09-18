@@ -1,2 +1,48 @@
-<h1>You are in:</h1>
-<h2>#{@neighborhood.name}</h2>
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+
+<form id="latitude">
+  <input type="text" name="latitude" value=""><br>
+</form>
+
+<form id="longitude">
+  <input type="text" name="longitude" value="" ><br>
+</form>
+
+<form>
+  <input type="text" name="yo" value="yes"><br>
+</form>
+
+  <p id="demo"></p>    
+  <script>
+    var lat = document.getElementById("latitude");
+    var lon = document.getElementById("longitude");
+    var x = document.getElementById("demo");
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else { 
+            x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+    }
+
+    function showPosition(position) {
+        lat.innerHTML = position.coords.latitude;
+        lon.innerHTML = position.coords.longitude; 
+    }
+
+    getLocation();
+  </script>
+
+  <%= form_for :neighborhood, remote: true do |f| %>
+  <%= f.text_field :latitude %>
+  <%= f.text_field :longitude %>
+  <%= f.submit %>
+<% end %>
+
+</body>
+</html>
