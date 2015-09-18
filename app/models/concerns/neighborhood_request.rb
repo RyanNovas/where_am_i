@@ -21,5 +21,3 @@ class Neighborhood_request
   end
 
 end
-
-Neighborhood_request.new
