@@ -1,3 +1,3 @@
 class User < ActiveRecord::Base
-  has_one :neighborhood
+  belongs_to :neighborhood
 end

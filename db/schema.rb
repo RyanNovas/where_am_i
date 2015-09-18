@@ -15,19 +15,19 @@ ActiveRecord::Schema.define(version: 20150918170858) do
 
   create_table "neighborhoods", force: :cascade do |t|
     t.string   "name"
-    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  add_index "neighborhoods", ["user_id"], name: "index_neighborhoods_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.integer  "latitude"
     t.integer  "longitude"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "neighborhood_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
+
+  add_index "users", ["neighborhood_id"], name: "index_users_on_neighborhood_id"
 
   create_table "vote_counts", force: :cascade do |t|
     t.integer  "number_of_votes"
