@@ -17,7 +17,7 @@
   <input type="text" name="yo" value="yes"><br>
 </form>
 
-  <p id="demo"></p>    
+  <p id="demo"></p>
   <script>
     var lat = document.getElementById("latitude");
     var lon = document.getElementById("longitude");
@@ -25,20 +25,20 @@
     function getLocation() {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(showPosition);
-        } else { 
+        } else {
             x.innerHTML = "Geolocation is not supported by this browser.";
         }
     }
 
     function showPosition(position) {
         lat.innerHTML = position.coords.latitude;
-        lon.innerHTML = position.coords.longitude; 
+        lon.innerHTML = position.coords.longitude;
     }
 
     getLocation();
   </script>
 
-  <%= form_for :neighborhood, remote: true do |f| %>
+  <%= form_for neighborhoods_path, remote: true do |f| %>
   <%= f.text_field :latitude %>
   <%= f.text_field :longitude %>
   <%= f.submit %>
