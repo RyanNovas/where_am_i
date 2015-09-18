@@ -8,7 +8,7 @@ class Neighborhood_request
   def initialize
     @latitude = 40.6928738
     @longitude = -73.9162731
-    @url = "http://api.nytimes.com/svc/politics/v2/districts.json?lat=#{@latitude}&lng=#{@longitude}&api-key=#{neighborhood_key}"
+    @url = "http://api.nytimes.com/svc/politics/v2/districts.json?lat=#{@latitude}&lng=#{@longitude}&api-key=#{Neighborhood_key}"
     neighborhood_name
   end
 
