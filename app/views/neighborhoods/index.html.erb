@@ -1,12 +1,12 @@
-<%= form_for neighborhoods_path, remote: true do |f| %>
-  <%= f.hidden_field :latitude %>
-  <%= f.hidden_field :longitude %> <br>
+<%= form_tag '/location', method: :post, remote: true do %>
+  <%= hidden_field_tag "latitude" %>
+  <%= hidden_field_tag "longitude" %>
   <%= submit_tag "", :id => 'submit', :style => "display: none;" %>
 <% end %>
 
 <script>
-    var lat = document.getElementById("_neighborhoods_latitude");
-    var lon = document.getElementById("_neighborhoods_longitude");
+    var lat = document.getElementById("latitude");
+    var lon = document.getElementById("longitude");
     function getLocation() {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(showPosition);
@@ -27,7 +27,7 @@
 
     getLocation();
 
-  </script>
+</script>
 
-</body>
-</html>
+<h1>You are in:</h1>
+<h2><%=  "#{@name}" %></h2>
