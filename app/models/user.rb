@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
 
   def find_neighborhood_name
     @url = "http://api.nytimes.com/svc/politics/v2/districts.json?lat=#{@latitude}&lng=#{@longitude}&api-key=#{ENV["Neighborhood_key"]}"
+    binding.pry
     @neighborhood_name = (JSON.load(open(@url))["results"][0]["district"])
     neighborhood_exists? (@neighborhood_name)
   end
@@ -25,7 +26,6 @@ class User < ActiveRecord::Base
 
   def set_neighborhood_id
     self.neighborhood_id = @neighborhood.id
-    binding.pry
   end
 
 
