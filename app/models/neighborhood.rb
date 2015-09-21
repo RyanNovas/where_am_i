@@ -7,14 +7,10 @@ class Neighborhood < ActiveRecord::Base
 
   attr_accessor :url, :latitude, :longitude
 
-  def initialize(latitude, longitude)
-    @latitude = latitude
-    @longitude = longitude
-    @url = "http://api.nytimes.com/svc/politics/v2/districts.json?lat=#{@latitude}&lng=#{@longitude}&api-key=#{ENV["Neighborhood_key"]}"
-    neighborhood_name
-  end
+  
 
   def neighborhood_request
+    @url = "http://api.nytimes.com/svc/politics/v2/districts.json?lat=#{@latitude}&lng=#{@longitude}&api-key=#{ENV["Neighborhood_key"]}"
     JSON.load(open(@url))
   end
 
