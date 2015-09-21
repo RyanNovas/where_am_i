@@ -8,8 +8,8 @@ class NeighborhoodsController < ApplicationController
 
   def location
     binding.pry
-    longitude = params[:latitude]
-    latitude = params[:longitude]
+    @longitude = params[:latitude]
+    @latitude = params[:longitude]
     respond_to do |format|
       format.js{}
     end

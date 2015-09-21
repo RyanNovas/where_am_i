@@ -7,9 +7,9 @@ class Neighborhood < ActiveRecord::Base
 
   attr_accessor :url, :latitude, :longitude
 
-  def initialize
-    @latitude = 40.6928738
-    @longitude = -73.9162731
+  def initialize(latitude, longitude)
+    @latitude = latitude
+    @longitude = longitude
     @url = "http://api.nytimes.com/svc/politics/v2/districts.json?lat=#{@latitude}&lng=#{@longitude}&api-key=#{ENV["Neighborhood_key"]}"
     neighborhood_name
   end
