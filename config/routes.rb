@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
 
-  root to: "neighborhoods#index"
+  root to: "users#index"
 
   resources :vote_counts
   resources :neighborhoods
   resources :users
+  resources :locations
+  post "location" => "users#location"
+  get "something" => "users#something"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

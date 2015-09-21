@@ -1,0 +1,27 @@
+<%=  form_for @user, url: {action: "create"} do |f|%>
+  <%= f.label :latitude %>
+  <%= f.text_field :latitude %>
+  <%= f.label :longitude %>
+  <%= f.text_field :longitude %>
+  <%= f.submit %>
+<% end %>
+<script>
+
+    var lat = document.getElementById("user_latitude");
+    var lon = document.getElementById("user_longitude");
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+    }
+
+    function showPosition(position) {
+        lat.value = position.coords.latitude;
+        lon.value = position.coords.longitude;
+    }
+
+    getLocation();
+
+</script>
