@@ -1,27 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title></title>
-</head>
-<body>
+<%= form_for neighborhoods_path, remote: true do |f| %>
+  <%= f.hidden_field :latitude %>
+  <%= f.hidden_field :longitude %> <br>
+  <%= submit_tag "", :id => 'submit', :style => "display: none;" %>
+<% end %>
 
-<form id="latitude">
-  <input type="text" name="latitude" value=""><br>
-</form>
-
-<form id="longitude">
-  <input type="text" name="longitude" value="" ><br>
-</form>
-
-<form>
-  <input type="text" name="yo" value="yes"><br>
-</form>
-
-  <p id="demo"></p>
-  <script>
-    var lat = document.getElementById("latitude");
-    var lon = document.getElementById("longitude");
-    var x = document.getElementById("demo");
+<script>
+    var lat = document.getElementById("_neighborhoods_latitude");
+    var lon = document.getElementById("_neighborhoods_longitude");
     function getLocation() {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(showPosition);
@@ -31,18 +16,18 @@
     }
 
     function showPosition(position) {
-        lat.innerHTML = position.coords.latitude;
-        lon.innerHTML = position.coords.longitude;
+        lat.value = position.coords.latitude;
+        lon.value = position.coords.longitude;
+        submitLocation();
+    }
+
+    function submitLocation() {
+      $("#submit").click();
     }
 
     getLocation();
-  </script>
 
-  <%= form_for neighborhoods_path, remote: true do |f| %>
-  <%= f.text_field :latitude %>
-  <%= f.text_field :longitude %>
-  <%= f.submit %>
-<% end %>
+  </script>
 
 </body>
 </html>
