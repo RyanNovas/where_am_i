@@ -2,20 +2,17 @@ class UsersController < ApplicationController
 
 
   def index
-    binding.pry
   end
 
   def location
-    binding.pry
     @latitude = params[:latitude]
     @longitude = params[:longitude]
-    binding.pry
     create
   end
 
   def create
-    binding.pry
     @user = User.create(latitude: @latitude,longitude: @longitude)
+    @user.find_neighborhood_name
   end
 
 
