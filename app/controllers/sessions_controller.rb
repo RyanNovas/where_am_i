@@ -6,8 +6,8 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @session = Session.create(session_params)
-    @session.find_neighborhood_name
+    initial_session = Session.create(session_params)
+    @session = initial_session.look_up_neighborhood
     yelp
     render :show
   end
