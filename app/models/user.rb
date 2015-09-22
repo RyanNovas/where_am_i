@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
+
   belongs_to :neighborhood
+
 
   require 'open-uri'
   require 'json'
@@ -16,7 +18,6 @@ class User < ActiveRecord::Base
     end
 
     neighborhood_information
-
   end
 
   def neighborhood_information
