@@ -1,2 +1,5 @@
 <h1>You are in:</h1>
 <h2> <%= @user.neighborhood.name + ", " + @user.neighborhood.borough %></h2>
+
+<img src="https://maps.googleapis.com/maps/api/staticmap?center=<%= @user.latitude %>,<%= @user.longitude %>&zoom=16&size=600x300&maptype=roadmap
+&markers=color:blue%7Clabel:S%7C<%= @user.latitude %>,<%= @user.longitude %>&key=<%= ENV["GoogleMaps_key"] %>" alt="" />
