@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
+  include YelpApi
+
   belongs_to :neighborhood
+
 
   require 'open-uri'
   require 'json'
@@ -16,7 +19,7 @@ class User < ActiveRecord::Base
     end
 
     neighborhood_information
-
+    yelp_test
   end
 
   def neighborhood_information
@@ -38,6 +41,11 @@ class User < ActiveRecord::Base
 
   def set_neighborhood_id
     self.neighborhood_id = @neighborhood.id
+  end
+
+  def yelp_test
+    binding.pry
+    yelp_client.search("New York City")
   end
 
 end
