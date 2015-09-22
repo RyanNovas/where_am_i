@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
     end
 
     neighborhood_information
-    yelp_test
+    yelp_attributes
   end
 
   def neighborhood_information
@@ -43,9 +43,29 @@ class User < ActiveRecord::Base
     self.neighborhood_id = @neighborhood.id
   end
 
-  def yelp_test
-    binding.pry
-    yelp_client.search("New York City")
+  def yelp_attributes
+    coordinates = { latitude: @latitude, longitude: @longitude }
+    restaurant_params = { term: 'restaurants',
+       limit: 1,
+       sort: 2,
+       category_filter: 'restaurants',
+       radius_filter: 250
+     }
+
+    restaurant = yelp_client.search_by_coordinates(coordinates, restaurant_params)
+    @restaurant_url = restaurant.businesses[0].url
+    @restaurant_name = restaurant.businesses[0].name
+
+    bar_params = { term: 'bar',
+       limit: 1,
+       sort: 2,
+       category_filter: 'bars',
+       radius_filter: 250
+     }
+
+    bar = yelp_client.search_by_coordinates(coordinates, bar_params)
+    @bar_url = bar.businesses[0].url
+    @bar_name = bar.businesses[0].name
   end
 
 end
