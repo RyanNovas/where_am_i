@@ -20,8 +20,7 @@ module YelpApi
        }
 
       results = yelp_client.search_by_coordinates(coordinates, params)
-      @restaurant_url = results.businesses[0].url
-      # @restaurant_name = restaurant.businesses[0].name
+      results.businesses[0]
     end
 
 end

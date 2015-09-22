@@ -2,10 +2,10 @@
 <h2> <%= @user.neighborhood.name + ", " + @user.neighborhood.borough %></h2>
 
 <h2>Highest Rated Restaurant URL</h2>
-<a href=" <%= @restaurant %>" target="_blank"><h3><%= @restaurant %></h3></a>
+<a href=" <%= @restaurant.url %>" target="_blank"><h3><%= @restaurant.name %></h3></a>
 
 <h2>Highest Rated Bar URL</h2>
-<a href=" <%= @bar %>" target="_blank"><h3><%= @bar %></h3></a>
+<a href=" <%= @bar.url %>" target="_blank"><h3><%= @bar.name %></h3></a>
 
 <img src="https://maps.googleapis.com/maps/api/staticmap?center=<%= @user.latitude %>,<%= @user.longitude %>&zoom=16&size=600x300&maptype=roadmap
-&markers=color:blue%7Clabel:YOU%7C<%= @user.latitude %>,<%= @user.longitude %>&key=<%= ENV["GoogleMaps_key"] %>" alt="" />
+&markers=color:blue%7Clabel:YOU%7C<%= @user.latitude %>,<%= @user.longitude %>&markers=color:yellow%7Clabel:B%7C<%= @bar.location.coordinate.latitude %>,<%=@bar.location.coordinate.longitude %>&markers=color:red%7Clabel:R%7C<%= @restaurant.location.coordinate.latitude %>,<%=@restaurant.location.coordinate.longitude %>&key=<%= ENV["GoogleMaps_key"] %>" alt="" />
