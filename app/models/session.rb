@@ -1,4 +1,4 @@
-class User < ActiveRecord::Base
+class Session < ActiveRecord::Base
 
   belongs_to :neighborhood
 
