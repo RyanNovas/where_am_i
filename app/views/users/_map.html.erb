@@ -1,0 +1,2 @@
+<img src="https://maps.googleapis.com/maps/api/staticmap?center=<%= @user.latitude %>,<%= @user.longitude %>&zoom=16&size=600x300&maptype=roadmap
+&markers=color:blue%7Clabel:YOU%7C<%= @user.latitude %>,<%= @user.longitude %>&markers=color:yellow%7Clabel:B%7C<%= @bar.location.coordinate.latitude %>,<%=@bar.location.coordinate.longitude %>&markers=color:red%7Clabel:R%7C<%= @restaurant.location.coordinate.latitude %>,<%=@restaurant.location.coordinate.longitude %>&key=<%= ENV["GoogleMaps_key"] %>" alt="" />
