@@ -40,13 +40,4 @@ class User < ActiveRecord::Base
     self.neighborhood_id = @neighborhood.id
   end
 
-
-
-
-
-
-
-
-
-
 end
