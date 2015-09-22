@@ -7,12 +7,19 @@ class User < ActiveRecord::Base
   attr_accessor :url, :latitude, :longitude, :neighborhood
 
   def find_neighborhood_name
-    #Fix this with Farraday
+    
     @url = "http://api.nytimes.com/svc/politics/v2/districts.json?lat=#{@latitude}&lng=#{@longitude}&api-key=#{ENV["Neighborhood_key"]}"
-    @neighborhood_name = (JSON.load(open(@url))["results"][0]["district"])
-    @borough_name = (JSON.load(open(@url))["results"].last["district"])
-    neighborhood_exists? (@neighborhood_name)
+    @response = HTTParty.get(@url)
+    @response.code == 200 ? neighborhood_information : find_neighborhood_name
+
   end
+
+  def neighborhood_information
+      @neighborhood_name = @response["results"][0]["district"]
+      @borough_name = @response["results"].last["district"]
+      neighborhood_exists? (@neighborhood_name)
+  end
+
 
   def neighborhood_exists?(neighborhood_name)
     @neighborhood = Neighborhood.all.find_by(name: neighborhood_name)
