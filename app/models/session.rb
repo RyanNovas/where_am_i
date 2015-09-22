@@ -3,7 +3,7 @@ class Session < ActiveRecord::Base
   belongs_to :neighborhood
 
   def look_up_neighborhood
-      Neighborhood.find_neighborhood_name(latitude, longitude)
+      Neighborhood.find_neighborhood_name(self, latitude, longitude)
   end
 
 
