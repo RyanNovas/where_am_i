@@ -19,7 +19,6 @@ class Neighborhood < ActiveRecord::Base
       neighborhood_exists?
   end
 
-
   def self.neighborhood_exists?
     @neighborhood = Neighborhood.all.find_by(name: @neighborhood_name)
     @neighborhood ? @session.set_neighborhood_id(@neighborhood.id) : create_neighborhood
@@ -27,9 +26,10 @@ class Neighborhood < ActiveRecord::Base
 
   def self.create_neighborhood
     @neighborhood = Neighborhood.create(name: @neighborhood_name, borough: @borough_name)
-    @session.set_neighborhood_id(@neighborhood.id)
     Votes.create(neighborhood_id: @neighborhood.id)
+    @session.set_neighborhood_id(@neighborhood.id)
   end
+
 
 
 end
