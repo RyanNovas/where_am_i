@@ -15,6 +15,7 @@ class Neighborhood < ActiveRecord::Base
   def self.neighborhood_information
       @neighborhood_name = @response["results"][0]["district"]
       @borough_name = @response["results"].last["district"]
+      binding.pry
       neighborhood_exists?
   end
 

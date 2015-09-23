@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150922194849) do
+ActiveRecord::Schema.define(version: 20150923150434) do
 
   create_table "neighborhoods", force: :cascade do |t|
     t.string   "name"
@@ -30,13 +30,14 @@ ActiveRecord::Schema.define(version: 20150922194849) do
 
   add_index "sessions", ["neighborhood_id"], name: "index_sessions_on_neighborhood_id"
 
-  create_table "vote_counts", force: :cascade do |t|
-    t.integer  "number_of_votes"
+  create_table "votes", force: :cascade do |t|
     t.integer  "neighborhood_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "up_votes"
+    t.integer  "down_votes"
   end
 
-  add_index "vote_counts", ["neighborhood_id"], name: "index_vote_counts_on_neighborhood_id"
+  add_index "votes", ["neighborhood_id"], name: "index_votes_on_neighborhood_id"
 
 end
