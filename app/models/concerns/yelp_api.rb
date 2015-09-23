@@ -23,4 +23,11 @@ module YelpApi
       results.businesses[0]
     end
 
+    def type_doesnt_exist(type)
+      { "name" => "There are no #{type}",
+        "url" => "#",
+        "location" => {"coordinate" => { "latitude" => "", "longitude" => "" }}
+      }
+    end
+
 end
