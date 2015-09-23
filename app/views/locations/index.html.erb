@@ -1,12 +1,10 @@
-<%=  form_for @location, url: {action: "create"} do |f|%>
-  <%= f.label :latitude %>
+<%=  form_for @location, url: {action: "create"} do |f| %>
   <%= f.text_field :latitude %>
-  <%= f.label :longitude %>
   <%= f.text_field :longitude %>
   <%= f.submit %>
 <% end %>
 <script>
-
+    $("#new_location").hide();
     var lat = document.getElementById("location_latitude");
     var lon = document.getElementById("location_longitude");
     function getLocation() {
@@ -20,8 +18,17 @@
     function showPosition(position) {
         lat.value = position.coords.latitude;
         lon.value = position.coords.longitude;
+        $("#new_location").submit();
     }
 
     getLocation();
+
+
+    // $(function(){
+    //   $("#new_location").on( "change", "#location_longitude", function(e) {
+    //     //  $("input:submit")[0].submit();
+    //       console.log("changed");
+    //   });
+    // });
 
 </script>
