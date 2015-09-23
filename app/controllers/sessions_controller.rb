@@ -19,6 +19,22 @@ class SessionsController < ApplicationController
 
   def yelp
     @bar = yelp_attributes(session_params["latitude"], session_params["longitude"], "bars")
+    if @bar
+      @bar = @bar.raw_data
+    else
+      @bar = {
+        "name" => "There are no bars",
+        "url" => "#"
+      }
+    end
     @restaurant = yelp_attributes(session_params["latitude"], session_params["longitude"], "restaurants")
+    if @restaurant
+      @restaurant = @restaurant.raw_data
+    else
+      @restaurant = {
+        "name" => "There are no restaurants",
+        "url" => "#"
+      }
+    end
   end
 end

@@ -13,7 +13,8 @@ class Neighborhood < ActiveRecord::Base
   end
 
   def self.neighborhood_information
-      @neighborhood_name = @response["results"][0]["district"]
+      selected_result = @response["results"].select { |value| value["level"].include?("Neighborhood") }
+      @neighborhood_name = selected_result.first["district"]
       @borough_name = @response["results"].last["district"]
       neighborhood_exists?
   end
