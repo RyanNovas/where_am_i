@@ -24,8 +24,4 @@ class SessionsController < ApplicationController
     @restaurant = yelp_attributes(session_params["latitude"], session_params["longitude"], "restaurants")
   end
 
-  # def votes
-  #   @votes = self.neighborhood.votes
-  # end
-
 end
