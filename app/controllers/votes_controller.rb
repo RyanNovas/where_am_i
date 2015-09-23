@@ -8,14 +8,18 @@ class VotesController < ApplicationController
     @vote = Votes.all.find_by(neighborhood_id: params["neighborhood_id"])
     @vote.up_votes +=1
     @vote.save
-    redirect_to root_path
+    respond_to do |format|
+      format.js { render :upvotes }
+    end
   end
 
   def down_vote
     @vote = Votes.all.find_by(neighborhood_id: params["neighborhood_id"])
     @vote.down_votes +=1
     @vote.save
-    redirect_to root_path
+    respond_to do |format|
+      format.js { render :downvotes }
+    end
   end
 
   def show

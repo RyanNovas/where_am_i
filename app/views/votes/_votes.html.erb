@@ -1,2 +1,2 @@
-<h2> <%= link_to "Up_Votes", votes_up_vote_path(:neighborhood_id => @location.neighborhood_id), method: :post%> <%= @location.neighborhood.votes.up_votes %></h2>
-<h2> <%= link_to "Down_Votes", votes_down_vote_path(:neighborhood_id => @location.neighborhood_id), method: :post%> <%= @location.neighborhood.votes.down_votes * -1 %></h2>
+<h2> <%= link_to "Up_Votes", votes_up_vote_path(:neighborhood_id => @location.neighborhood_id), method: :post, remote: true %> <span class="upvote_count"><%= @location.neighborhood.votes.up_votes %></span></h2>
+<h2> <%= link_to "Down_Votes", votes_down_vote_path(:neighborhood_id => @location.neighborhood_id), method: :post, remote: true %> <span class="downvote_count"><%= @location.neighborhood.votes.down_votes * -1 %></span></h2>
