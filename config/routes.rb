@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :neighborhoods
   resources :sessions
   resources :locations
+  resources :votes
   post "location" => "sessions#location"
   get "something" => "sessions#something"
   # The priority is based upon order of creation: first created -> highest priority.

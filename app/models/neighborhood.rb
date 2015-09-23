@@ -1,6 +1,6 @@
 class Neighborhood < ActiveRecord::Base
   has_many :sessions
-  has_one :vote_count
+  has_one :votes
 
   def self.find_neighborhood_name(session_instance, latitude, longitude)
     @session = session_instance
@@ -15,7 +15,6 @@ class Neighborhood < ActiveRecord::Base
   def self.neighborhood_information
       @neighborhood_name = @response["results"][0]["district"]
       @borough_name = @response["results"].last["district"]
-      binding.pry
       neighborhood_exists?
   end
 
@@ -28,6 +27,7 @@ class Neighborhood < ActiveRecord::Base
   def self.create_neighborhood
     @neighborhood = Neighborhood.create(name: @neighborhood_name, borough: @borough_name)
     @session.set_neighborhood_id(@neighborhood.id)
+    Votes.create(neighborhood_id: @neighborhood.id)
   end
 
 
