@@ -22,7 +22,7 @@ class VotesController < ApplicationController
   end
 
   def show
-    render session_path()
+    render location_path()
   end
 
 

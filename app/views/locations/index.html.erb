@@ -1,4 +1,4 @@
-<%=  form_for @session, url: {action: "create"} do |f|%>
+<%=  form_for @location, url: {action: "create"} do |f|%>
   <%= f.label :latitude %>
   <%= f.text_field :latitude %>
   <%= f.label :longitude %>
@@ -7,8 +7,8 @@
 <% end %>
 <script>
 
-    var lat = document.getElementById("session_latitude");
-    var lon = document.getElementById("session_longitude");
+    var lat = document.getElementById("location_latitude");
+    var lon = document.getElementById("location_longitude");
     function getLocation() {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(showPosition);

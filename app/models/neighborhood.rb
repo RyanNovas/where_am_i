@@ -1,9 +1,9 @@
 class Neighborhood < ActiveRecord::Base
-  has_many :sessions
+  has_many :locations
   has_one :votes
 
-  def self.find_neighborhood_name(session_instance, latitude, longitude)
-    @session = session_instance
+  def self.find_neighborhood_name(location_instance, latitude, longitude)
+    @location = location_instance
     @url = "http://api.nytimes.com/svc/politics/v2/districts.json?lat=#{latitude}&lng=#{longitude}&api-key=#{ENV["Neighborhood_key"]}"
     @response = HTTParty.get(@url)
     while @response.code != 200
@@ -21,13 +21,13 @@ class Neighborhood < ActiveRecord::Base
 
   def self.neighborhood_exists?
     @neighborhood = Neighborhood.all.find_by(name: @neighborhood_name)
-    @neighborhood ? @session.set_neighborhood_id(@neighborhood.id) : create_neighborhood
+    @neighborhood ? @location.set_neighborhood_id(@neighborhood.id) : create_neighborhood
   end
 
   def self.create_neighborhood
     @neighborhood = Neighborhood.create(name: @neighborhood_name, borough: @borough_name)
     Votes.create(neighborhood_id: @neighborhood.id)
-    @session.set_neighborhood_id(@neighborhood.id)
+    @location.set_neighborhood_id(@neighborhood.id)
   end
 
 end
