@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
 
-  root to: "sessions#index"
+  root to: "locations#index"
 
   resources :votes
     post 'votes/up_vote' => 'votes#up_vote'
     post 'votes/down_vote' => 'votes#down_vote'
   resources :neighborhoods
-  resources :sessions
+  resources :locations
   resources :locations
 
   # The priority is based upon order of creation: first created -> highest priority.
