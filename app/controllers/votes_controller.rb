@@ -1,8 +1,5 @@
 class VotesController < ApplicationController
 
-
-
-
   def index
     @votes = Votes.all.last
   end

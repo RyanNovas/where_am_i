@@ -11,7 +11,9 @@ class LocationsController < ApplicationController
     @location = initial_location.look_up_neighborhood
     yelp
     avg_one_bdrm
-    render :show
+    respond_to do |format|
+      format.js { render :index }
+    end
   end
 
   private
