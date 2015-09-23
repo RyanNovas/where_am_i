@@ -30,5 +30,4 @@ class Neighborhood < ActiveRecord::Base
     @session.set_neighborhood_id(@neighborhood.id)
   end
 
-
 end
