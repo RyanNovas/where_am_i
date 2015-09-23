@@ -20,7 +20,18 @@ module YelpApi
        }
 
       results = yelp_client.search_by_coordinates(coordinates, params)
-      results.businesses[0]
+      if results.businesses.empty?
+        establishment_doesnt_exist(type)
+      else
+        results.businesses[0].raw_data
+      end
+    end
+
+    def establishment_doesnt_exist(type)
+      { "name" => "There are no #{type}",
+        "url" => "#",
+        "location" => {"coordinate" => { "latitude" => "", "longitude" => "" }}
+      }
     end
 
 end
