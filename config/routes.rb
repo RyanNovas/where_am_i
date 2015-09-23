@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   root to: "sessions#index"
 
   resources :votes
-    #get 'votes/up_vote' => 'votes#up_vote'
     post 'votes/up_vote' => 'votes#up_vote'
     post 'votes/down_vote' => 'votes#down_vote'
   resources :neighborhoods
