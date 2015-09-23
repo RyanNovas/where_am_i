@@ -18,9 +18,7 @@ class SessionsController < ApplicationController
     params.require(:session).permit(:latitude, :longitude)
   end
   def yelp
-    bar_result = yelp_attributes(session_params["latitude"], session_params["longitude"], "bars")
-    bar_result ? @bar = bar_result.raw_data : @bar = type_doesnt_exist("bars")
-    restaurant_result = yelp_attributes(session_params["latitude"], session_params["longitude"], "restaurants")
-    restaurant_result ? @restaurant = restaurant_result.raw_data : @restaurant = type_doesnt_exist("restaurants")
+    @bar = yelp_attributes(session_params["latitude"], session_params["longitude"], "bars")
+    @restaurant = yelp_attributes(session_params["latitude"], session_params["longitude"], "restaurants")
   end
 end
