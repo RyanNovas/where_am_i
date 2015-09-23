@@ -2,7 +2,6 @@ class VotesController < ApplicationController
 
   def create
     Vote.create(neighborhood_id)
-    binding.pry
   end
 
   def up_vote
