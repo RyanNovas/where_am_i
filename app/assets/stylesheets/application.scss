@@ -11,19 +11,53 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require normalize-rails
  *= require_self
  */
 
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,600);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,600,800);
 
 body {
   font-family: "Open Sans";
+  background-color: black;
 }
 
 @media screen and (max-width: 600px) {
-  body {
+  .container {
+    padding: 10px 0 10px 0;
+    margin: 0;
+    color: white;
+    height: 250px;
+  }
+  #neighborhood {
+    background-color: #3c97d3;
+    text-align: center;
+  }
+  #neighborhood h2 {
+    font-weight: 700;
+    margin: 0;
+    padding-top: 45px;
+  }
+  #neighborhood h1 {
+    font-weight: 800;
+    padding: 0;
+    margin: 0;
+  }
+  #establishments {
+    background-color: #f0c418;
+  }
+  #bedroom {
+    background-color: #955aa4;
+    text-align: center;
+  }
+  #votes {
     background-color: red;
   }
+  #map {
+    background-color: #e64b3b;
+  }
+
+
 }
