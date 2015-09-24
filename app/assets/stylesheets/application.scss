@@ -21,7 +21,6 @@
 
 body {
   font-family: "Open Sans";
-  background-color: black;
 }
 
 @media screen and (max-width: 600px) {
@@ -38,7 +37,7 @@ body {
   #neighborhood h2 {
     font-weight: 700;
     margin: 0;
-    padding-top: 45px;
+    padding-top: 50px;
   }
   #neighborhood h1 {
     font-weight: 800;
@@ -46,11 +45,50 @@ body {
     margin: 0;
   }
   #establishments {
-    background-color: #f0c418;
+    background-color: #f39c12;
+    text-align: center;
+  }
+  #restaurant, #bar {
+    padding-top: 51px;
+    text-align: center;
+    display: inline-block;
+    width: 180px;
+  }
+  #restaurant {
+    display: inline-block;
+    padding-right: 15px;
+  }
+  .fa {
+    color: white;
+  }
+  #bar {
+    display: inline-block;
+    padding-left: 15px;
+  }
+  #restaurant h3, #bar h3 {
+    font-size: 20px;
+    font-weight: 600;
   }
   #bedroom {
     background-color: #955aa4;
     text-align: center;
+  }
+  #bedroom h1 {
+    font-weight: 700;
+    padding: 0;
+    margin: 0;
+  }
+  #bedroom_h2 {
+    font-weight: 700;
+    margin: 0;
+    padding-top: 45px;
+  }
+  #bedroom h2 {
+    margin: 0
+  }
+  a {
+    text-decoration: none;
+    color: white;
   }
   #votes {
     background-color: red;
