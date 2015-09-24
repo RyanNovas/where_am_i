@@ -1,5 +1,10 @@
-<h2>Highest Rated Restaurant URL</h2>
-<a href=" <%= @restaurant["url"] %>" target="_blank"><h3><%= @restaurant["name"] %></h3></a>
-
-<h2>Highest Rated Bar URL</h2>
-<a href=" <%= @bar["url"] %>" target="_blank"><h3><%= @bar["name"] %></h3></a>
+<div id="establishments">
+  <div id = "restaurant">
+    <i class="fa fa-cutlery"></i>
+    <h3><a href=" <%= @restaurant["url"] %>" target="_blank"><%= @restaurant["name"].upcase %></h3></a>
+  </div>
+  <div id="bar">
+    <i class="fa fa-glass"></i>
+    <h3><a href=" <%= @bar["url"] %>" target="_blank"><%= @bar["name"].upcase %></h3></a>
+  </div>
+</div>
