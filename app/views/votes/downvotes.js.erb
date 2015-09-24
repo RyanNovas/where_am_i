@@ -1,6 +1,6 @@
 <% if @downvote %>
   var current_value = $(".downvote_count").html();
-  $(".downvote_count").html(Number.parseInt(current_value) + 1)
+  $(".downvote_count").html(Number.parseInt(current_value) - 1)
 <% else %>
   alert("You have already voted!")
 <% end %>
