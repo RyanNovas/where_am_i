@@ -1,2 +1,6 @@
-var current_value = $(".upvote_count").html();
-$(".upvote_count").html(Number.parseInt(current_value) + 1)
+<% if @upvote %>
+  var current_value = $(".upvote_count").html();
+  $(".upvote_count").html(Number.parseInt(current_value) + 1)
+<% else %>
+  alert("You have already voted!")
+<% end %>

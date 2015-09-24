@@ -6,8 +6,7 @@ class VotesController < ApplicationController
 
   def up_vote
     @vote = Votes.all.find_by(neighborhood_id: params["neighborhood_id"])
-    @vote.up_votes +=1
-    @vote.save
+    @upvote = @vote.vote?(params["location_id"], "up")
     respond_to do |format|
       format.js { render :upvotes }
     end
@@ -15,8 +14,7 @@ class VotesController < ApplicationController
 
   def down_vote
     @vote = Votes.all.find_by(neighborhood_id: params["neighborhood_id"])
-    @vote.down_votes +=1
-    @vote.save
+    @downvote = @vote.vote?(params["location_id"], "down")
     respond_to do |format|
       format.js { render :downvotes }
     end
@@ -25,7 +23,5 @@ class VotesController < ApplicationController
   def show
     render location_path()
   end
-
-
 
 end

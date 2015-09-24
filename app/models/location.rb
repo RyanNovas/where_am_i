@@ -9,6 +9,7 @@ class Location < ActiveRecord::Base
 
   def set_neighborhood_id(id)
     self.neighborhood_id = id
+    self.save
     self
   end
 
