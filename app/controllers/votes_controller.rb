@@ -5,6 +5,7 @@ class VotesController < ApplicationController
   end
 
   def up_vote
+    binding.pry
     @vote = Votes.all.find_by(neighborhood_id: params["neighborhood_id"])
     @vote.up_votes +=1
     @vote.save
