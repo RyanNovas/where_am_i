@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,600);
+
+body {
+  font-family: "Open Sans";
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    background-color: red;
+  }
+}
