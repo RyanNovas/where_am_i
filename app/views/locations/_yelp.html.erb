@@ -1,10 +1,16 @@
-<div id="establishments">
-  <div id = "restaurant">
-    <i class="fa fa-cutlery"></i>
-    <h3><a href=" <%= @restaurant["url"] %>" target="_blank"><%= @restaurant["name"].upcase %></h3></a>
-  </div>
-  <div id="bar">
-    <i class="fa fa-glass"></i>
-    <h3><a href=" <%= @bar["url"] %>" target="_blank"><%= @bar["name"].upcase %></h3></a>
-  </div>
+<div id="establishments" class="container">
+  <h2>BEST NEARBY FOOD & DRINK</h2>
+  <a href="<%= @restaurant["url"] %>" target="_blank">
+    <div id="restaurant">
+      <i class="fa fa-cutlery fa-4x"></i>
+      <h3><%= @restaurant["name"].upcase %></h3>
+    </div>
+  </a>
+
+  <a href="<%= @bar["url"] %>" target="_blank">
+    <div id="bar">
+      <i class="fa fa-glass fa-4x"></i>
+      <h3><%= @bar["name"].upcase %></h3>
+    </div>
+  </a>
 </div>

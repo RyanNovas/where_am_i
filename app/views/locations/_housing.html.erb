@@ -1,4 +1,6 @@
-<div id="bedroom">
-  <h2>AVERAGE ONE BEDROOM IN  <%= @location.neighborhood.name.upcase %> is:</h2>
-  <h2><%= number_to_currency(@price, precision: 0) %></h2>
+<div id="bedroom" class="container">
+  <div id="bedroom_h2">
+    <h2>AVERAGE ONE BEDROOM</h2>
+  </div>
+  <h1><%= number_to_currency(@price, precision: 0) %></h1>
 </div>

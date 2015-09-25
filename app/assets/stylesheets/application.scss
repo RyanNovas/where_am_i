@@ -11,19 +11,225 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require normalize-rails
  *= require_self
  */
 
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,600);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,600,800);
 
 body {
   font-family: "Open Sans";
 }
 
-@media screen and (max-width: 600px) {
-  body {
-    background-color: red;
+.test {
+  background-color: white;
+  color: #2c3e50;
+  width: 35%;
+  float: left;
+}
+.container {
+  padding: 10px 0 10px 0;
+  margin: 0;
+}
+#neighborhood {
+  text-align: center;
+}
+#neighborhood h2 {
+  font-weight: 700;
+  margin: 0;
+  padding-top: 20px;
+}
+#neighborhood h1 {
+  font-weight: 800;
+  padding: 0;
+  margin: 0;
+}
+#establishments {
+  text-align: center;
+  padding: 10px 0 10px 0;
+}
+#establishments h2 {
+  margin-top: 5px;
+}
+#restaurant, #bar {
+  padding-top: 15px;
+  text-align: center;
+  display: inline-block;
+  width: 180px;
+  margin-bottom: 0;
+}
+#restaurant {
+  display: inline-block;
+  padding-right: 15px;
+}
+.fa {
+  color: #2c3e50;
+}
+#bar {
+  display: inline-block;
+  padding-left: 15px;
+}
+#restaurant h3, #bar h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+#bedroom {
+  text-align: center;
+}
+#bedroom h1 {
+    font-weight: 700;
+    padding: 0;
+    margin: 9px;
+}
+#bedroom_h2 {
+  font-weight: 700;
+  margin: 0;
+  padding-top: 0px;
+}
+#bedroom h2 {
+  margin: 0px 0 5px 0;
+}
+a {
+  text-decoration: none;
+  color: #2c3e50;
+}
+#votes {
+  text-emphasis: center;
+  text-align: center;
+}
+#votes span {
+  margin-left: -7px;
+  font-size: 23pt;
+  display: block;
+}
+#votes h2 {
+  padding-top: 18px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+#up_vote h2, #down_vote h2{
+  padding-top: 5px;
+  display: inline-block;
+  width: 180px;
+}
+#up_vote {
+  display: inline-block;
+}
+#down_vote {
+  display: inline-block;
+}
+#map {
+  width: 65%;
+  height:100vh;
+  float: right;
+}
+
+@media screen and (max-width: 1000px) {
+  .test {
+    width: 100%;
   }
+  .container {
+    padding: 10px 0 10px 0;
+    margin: 0;
+    color: white;
+    height: 250px;
+  }
+  #neighborhood {
+    background-color: #3c97d3;
+    text-align: center;
+  }
+  #neighborhood h2 {
+    font-weight: 700;
+    margin: 0;
+    padding-top: 50px;
+  }
+  #neighborhood h1 {
+    font-weight: 800;
+    padding: 0;
+    margin: 0;
+  }
+  #establishments {
+    background-color: #f39c12;
+    text-align: center;
+    padding: 30px 0 30px 0;
+  }
+  #establishments h2 {
+    margin-top: 35px;
+  }
+  #restaurant, #bar {
+    padding-top: 15px;
+    text-align: center;
+    display: inline-block;
+    width: 180px;
+  }
+  #restaurant {
+    display: inline-block;
+    padding-right: 15px;
+  }
+  .fa {
+    color: white;
+  }
+  #bar {
+    display: inline-block;
+    padding-left: 15px;
+  }
+  #restaurant h3, #bar h3 {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  #bedroom {
+    background-color: #955aa4;
+    text-align: center;
+  }
+  #bedroom h1 {
+      font-weight: 700;
+      padding: 0;
+      margin: 9px;
+  }
+  #bedroom_h2 {
+    font-weight: 700;
+    margin: 0;
+    padding-top: 45px;
+  }
+  #bedroom h2 {
+    margin: 29px 0 5px 0;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  #votes {
+    background-color: red;
+    text-emphasis: center;
+    text-align: center;
+  }
+  #votes span {
+        margin-left: -7px;
+        font-size: 23pt;
+        display: block;
+    }
+    #votes h2 {
+        padding-top: 18px;
+        margin-bottom: 10px;
+        font-weight: 700;
+    }
+  #up_vote h2, #down_vote h2{
+    padding-top: 5px;
+    display: inline-block;
+    width: 180px;
+  }
+  #up_vote {
+    display: inline-block;
+  }
+  #down_vote {
+    display: inline-block;
+  }
+  #map {
+    height: 400px;
+    width: 100%;
+    float: none;
+  }
+
 }
