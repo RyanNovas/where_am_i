@@ -10,7 +10,7 @@ class LocationsController < ApplicationController
     initial_location = Location.create(location_params)
     @location = initial_location.look_up_neighborhood
     yelp
-    avg_one_bdrm
+    avg_one_bdrm(@location)
     respond_to do |format|
       format.js { render :index }
     end
