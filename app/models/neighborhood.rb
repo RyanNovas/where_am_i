@@ -5,9 +5,11 @@ class Neighborhood < ActiveRecord::Base
 
 
   def self.neighborhood_exists?(location, neighborhood_name, borough_name)
+    @location = location
+    @neighborhood_name = neighborhood_name
     @borough_name = borough_name
     @neighborhood = Neighborhood.all.find_by(name: neighborhood_name)
-    @neighborhood ? location.set_neighborhood_id(@neighborhood.id) : create_neighborhood
+    @neighborhood ? @location.set_neighborhood_id(@neighborhood.id) : create_neighborhood
   end
 
   def self.create_neighborhood
