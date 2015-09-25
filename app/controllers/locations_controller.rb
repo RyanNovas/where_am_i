@@ -9,7 +9,6 @@ class LocationsController < ApplicationController
   def create
     initial_location = Location.create(location_params)
     @location = initial_location.look_up_neighborhood
-    binding.pry
     yelp
     avg_one_bdrm(@location)
     respond_to do |format|

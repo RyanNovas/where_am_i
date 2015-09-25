@@ -7,8 +7,7 @@ class Location < ActiveRecord::Base
   end
 
   def set_neighborhood_id(id)
-    self.neighborhood_id = id
-    self.save
+    self.update({neighborhood_id: id})
     self
   end
 
