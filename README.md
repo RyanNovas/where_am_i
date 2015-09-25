@@ -2,7 +2,7 @@ Where Am I?
 ========
 
 
-Single page web app for ~~drunk people that wander into uncharted, unknown territory in New York City~~ determining what neighborhood and borough you are in and the top restaurant and bar in the area.  
+Single page web app for people that wander into uncharted, unknown territory in New York City determining what neighborhood and borough you are in, as well as housing prices, dining establishments, and the popularity of the area.  
 
 ## URL: [Where Am I?](https://radiant-island-2039.herokuapp.com)
 
@@ -31,18 +31,16 @@ Single page web app for ~~drunk people that wander into uncharted, unknown terri
 
 ## Features
 
-1. Tells you what neighborhood and borough you are currently in 
-2. Tells you the top rated restaurant and bar on Yelp for that area
-3. Tells you the average one-bedroom rental price for the neighborhood
+1. Tells you what neighborhood and borough you are currently in (NY Times Districts API)
+2. Suggests the top rated restaurant and bar on Yelp for that area (Yelp API)
+3. Pulls the average one-bedroom rental price for the neighborhood (StreetEasy API)
+4. Shows the popularity of the neighborhood, as expressed by thumbs up/down 
 
 ## Credits
 
 Tyler Brewer, Ryan Novas & Nancy Ko
 
-## License 
 Copyright (c) 2015 <Tyler Brewer, Ryan Novas & Nancy Ko>
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
