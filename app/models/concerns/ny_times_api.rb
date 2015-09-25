@@ -3,7 +3,10 @@ module NyTimesApi
   def neighborhood_query(location)
     url = "http://api.nytimes.com/svc/politics/v2/districts.json?lat=#{location.latitude}&lng=#{location.longitude}&api-key=#{ENV["Neighborhood_key"]}"
     @response = HTTParty.get(url)
-    @response.code == 200 ? neighborhood_information(location) : @response
+    while @response.code != 200
+      @response = HTTParty.get(url)
+    end
+    neighborhood_information(location)
   end
 
   def neighborhood_information(location)
