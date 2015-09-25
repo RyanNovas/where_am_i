@@ -1,9 +1,9 @@
 <div id="votes" class="container">
-  <h1>POPULARITY:</h1>
+  <h2>POPULARITY</h2>
   <div id="down_vote">
-    <h2> <%= link_to '<i class="fa fa-thumbs-o-up fa-3x"></i>'.html_safe, votes_up_vote_path(:neighborhood_id => @location.neighborhood_id, :location_id => @location.id), method: :post, remote: true %> <span class="upvote_count"><%= @location.neighborhood.votes.up_votes %></span></h2>
+    <h2> <%= link_to '<i class="fa fa-thumbs-o-up fa-3x"></i>'.html_safe, votes_up_vote_path(:neighborhood_id => @location.neighborhood_id, :location_id => @location.id), method: :post, remote: true %> <span class="upvote_count"><%=@location.neighborhood.votes.up_votes %></span></h2>
   </div>
   <div id="up_vote">
-    <h2> <%= link_to '<i class="fa fa-thumbs-o-down fa-3x"></i>'.html_safe, votes_down_vote_path(:neighborhood_id => @location.neighborhood_id, :location_id => @location.id), method: :post, remote: true %> <span class="downvote_count"><%= @location.neighborhood.votes.down_votes * -1 %></span></h2>
+    <h2> <%= link_to '<i class="fa fa-thumbs-o-down fa-3x"></i>'.html_safe, votes_down_vote_path(:neighborhood_id => @location.neighborhood_id, :location_id => @location.id), method: :post, remote: true %> <span class="downvote_count"><%=@location.neighborhood.votes.down_votes * -1 %></span></h2>
   </div>
 </div>

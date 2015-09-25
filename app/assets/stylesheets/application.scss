@@ -47,9 +47,13 @@ body {
   #establishments {
     background-color: #f39c12;
     text-align: center;
+    padding: 30px 0 30px 0;
+  }
+  #establishments h2 {
+    margin-top: 35px;
   }
   #restaurant, #bar {
-    padding-top: 51px;
+    padding-top: 15px;
     text-align: center;
     display: inline-block;
     width: 180px;
@@ -74,9 +78,9 @@ body {
     text-align: center;
   }
   #bedroom h1 {
-    font-weight: 700;
-    padding: 0;
-    margin: 0;
+      font-weight: 700;
+      padding: 0;
+      margin: 9px;
   }
   #bedroom_h2 {
     font-weight: 700;
@@ -84,7 +88,7 @@ body {
     padding-top: 45px;
   }
   #bedroom h2 {
-    margin: 0
+    margin: 29px 0 5px 0;
   }
   a {
     text-decoration: none;
@@ -95,8 +99,18 @@ body {
     text-emphasis: center;
     text-align: center;
   }
+  #votes span {
+        margin-left: -7px;
+        font-size: 23pt;
+        display: block;
+    }
+    #votes h2 {
+        padding-top: 18px;
+        margin-bottom: 10px;
+        font-weight: 700;
+    }
   #up_vote h2, #down_vote h2{
-    padding-top: 58px;
+    padding-top: 5px;
     display: inline-block;
     width: 180px;
   }
@@ -105,9 +119,6 @@ body {
   }
   #down_vote {
     display: inline-block;
-  }
-  #map {
-    background-color: #e64b3b;
   }
 
 
