@@ -23,7 +23,7 @@ body {
   font-family: "Open Sans";
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1000px) {
   .container {
     padding: 10px 0 10px 0;
     margin: 0;
@@ -119,6 +119,9 @@ body {
   }
   #down_vote {
     display: inline-block;
+  }
+  #map_image {
+    display: none;
   }
 
 
