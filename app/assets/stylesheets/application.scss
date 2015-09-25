@@ -92,6 +92,19 @@ body {
   }
   #votes {
     background-color: red;
+    text-emphasis: center;
+    text-align: center;
+  }
+  #up_vote h2, #down_vote h2{
+    padding-top: 58px;
+    display: inline-block;
+    width: 180px;
+  }
+  #up_vote {
+    display: inline-block;
+  }
+  #down_vote {
+    display: inline-block;
   }
   #map {
     background-color: #e64b3b;
