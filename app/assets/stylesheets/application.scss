@@ -34,6 +34,7 @@ body {
   margin: 0;
 }
 #neighborhood {
+  color: #3c97d3;
   text-align: center;
 }
 #neighborhood h2 {
@@ -47,6 +48,7 @@ body {
   margin: 0;
 }
 #establishments {
+  color: #f39c12;
   text-align: center;
   padding: 10px 0 10px 0;
 }
@@ -65,7 +67,7 @@ body {
   padding-right: 15px;
 }
 .fa {
-  color: #2c3e50;
+  color: #f39c12;
 }
 #bar {
   display: inline-block;
@@ -77,6 +79,7 @@ body {
 }
 #bedroom {
   text-align: center;
+  color: #955aa4;
 }
 #bedroom h1 {
     font-weight: 700;
@@ -93,11 +96,15 @@ body {
 }
 a {
   text-decoration: none;
-  color: #2c3e50;
+  color: #f39c12;
 }
 #votes {
+  color: #e64b3b;
   text-emphasis: center;
   text-align: center;
+}
+#votes .fa {
+  color: #e64b3b;
 }
 #votes span {
   margin-left: -7px;
@@ -105,7 +112,7 @@ a {
   display: block;
 }
 #votes h2 {
-  padding-top: 18px;
+  padding-top: 5px;
   margin-bottom: 10px;
   font-weight: 700;
 }
@@ -137,6 +144,7 @@ a {
     height: 250px;
   }
   #neighborhood {
+    color: white;
     background-color: #3c97d3;
     text-align: center;
   }
@@ -151,6 +159,7 @@ a {
     margin: 0;
   }
   #establishments {
+    color: white;
     background-color: #f39c12;
     text-align: center;
     padding: 30px 0 30px 0;
@@ -180,6 +189,7 @@ a {
     font-weight: 600;
   }
   #bedroom {
+    color: white;
     background-color: #955aa4;
     text-align: center;
   }
@@ -201,20 +211,24 @@ a {
     color: white;
   }
   #votes {
-    background-color: red;
+    background-color: #e64b3b;
+    color: white;
     text-emphasis: center;
     text-align: center;
   }
+  #votes .fa {
+    color: white;
+  }
   #votes span {
-        margin-left: -7px;
-        font-size: 23pt;
-        display: block;
-    }
-    #votes h2 {
-        padding-top: 18px;
-        margin-bottom: 10px;
-        font-weight: 700;
-    }
+    margin-left: -7px;
+    font-size: 23pt;
+    display: block;
+  }
+  #votes h2 {
+    padding-top: 18px;
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
   #up_vote h2, #down_vote h2{
     padding-top: 5px;
     display: inline-block;
@@ -231,5 +245,4 @@ a {
     width: 100%;
     float: none;
   }
-
 }
