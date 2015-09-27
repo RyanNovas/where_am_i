@@ -23,7 +23,7 @@ body {
   font-family: "Open Sans";
 }
 
-.test {
+.main {
   background-color: white;
   color: #2c3e50;
   width: 35%;
@@ -34,7 +34,7 @@ body {
   margin: 0;
 }
 #neighborhood {
-  color: #3c97d3;
+  color: #2c3e50;
   text-align: center;
 }
 #neighborhood h2 {
@@ -48,7 +48,7 @@ body {
   margin: 0;
 }
 #establishments {
-  color: #f39c12;
+  color: #2c3e50;
   text-align: center;
   padding: 10px 0 10px 0;
 }
@@ -67,7 +67,7 @@ body {
   padding-right: 15px;
 }
 .fa {
-  color: #f39c12;
+  color: #2c3e50;
 }
 #bar {
   display: inline-block;
@@ -79,7 +79,7 @@ body {
 }
 #bedroom {
   text-align: center;
-  color: #955aa4;
+  color: #2c3e50;
 }
 #bedroom h1 {
     font-weight: 700;
@@ -96,15 +96,15 @@ body {
 }
 a {
   text-decoration: none;
-  color: #f39c12;
+  color: #2c3e50;
 }
 #votes {
-  color: #e64b3b;
+  color: #2c3e50;
   text-emphasis: center;
   text-align: center;
 }
 #votes .fa {
-  color: #e64b3b;
+  color: #2c3e50;
 }
 #votes span {
   margin-left: -7px;
@@ -134,7 +134,7 @@ a {
 }
 
 @media screen and (max-width: 1000px) {
-  .test {
+  .main {
     width: 100%;
   }
   .container {
