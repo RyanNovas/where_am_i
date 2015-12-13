@@ -1,8 +1,8 @@
 class Location < ActiveRecord::Base
-  include NyTimesApi
+  include GoogleApi
   belongs_to :neighborhood
 
-  def look_up_neighborhood
+  def look_up_neighborhood #looks self up google api
       neighborhood_query(self)
   end
 

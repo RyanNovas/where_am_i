@@ -1,5 +1,5 @@
 class Neighborhood < ActiveRecord::Base
-  include NyTimesApi
+  include GoogleApi
   has_many :locations
   has_one :votes
 
