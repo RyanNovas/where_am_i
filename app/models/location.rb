@@ -2,7 +2,7 @@ class Location < ActiveRecord::Base
   include GoogleApi
   belongs_to :neighborhood
 
-  def look_up_neighborhood #looks self up google api
+  def look_up_neighborhood #looks self up google api and returns neighbhorod/borough
       neighborhood_query(self)
   end
 

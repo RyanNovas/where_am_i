@@ -8,8 +8,8 @@ class LocationsController < ApplicationController
 
   def create
     @location = Location.create(location_params).look_up_neighborhood
-    yelp
-    avg_one_bdrm(@location)
+    yelp ## find best food and bar restaurant within 250 feet
+    avg_one_bdrm(@location) # streetEasy bdrm price lookup
     respond_to do |format|
       format.js { render :index }
     end

@@ -20,8 +20,4 @@ class VotesController < ApplicationController
     end
   end
 
-  # def show
-  #   render location_path()
-  # end
-
 end
