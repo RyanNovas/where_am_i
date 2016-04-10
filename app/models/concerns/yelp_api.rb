@@ -16,7 +16,7 @@ module YelpApi
          limit: 1,
          sort: 2,
          category_filter: type,
-         radius_filter: 250
+         radius_filter: 500
        }
 
       results = yelp_client.search_by_coordinates(coordinates, params)
