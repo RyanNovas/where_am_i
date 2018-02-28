@@ -16,14 +16,15 @@ module YelpApi
          limit: 1,
          sort: 2,
          category_filter: type,
-         radius_filter: 500
+         radius_filter: 1000
        }
 
       results = yelp_client.search_by_coordinates(coordinates, params)
       if results.businesses.empty?
         establishment_not_found(type)
       else
-        results.businesses[0].raw_data
+        binding.pry
+        results.businesses[0]
       end
     end
 

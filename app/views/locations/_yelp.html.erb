@@ -1,16 +1,16 @@
 <div id="establishments" class="container">
   <h2>BEST NEARBY FOOD & DRINK</h2>
-  <a href="<%= @restaurant["url"] %>" target="_blank">
+  <a href="<%= @restaurant.url %>" target="_blank">
     <div id="restaurant">
       <div><i class="fa fa-cutlery fa-4x"></i></div>
-      <h3><%= @restaurant["name"].upcase %></h3>
+      <h3><%= @restaurant.name.upcase %></h3>
     </div>
   </a>
 
-  <a href="<%= @bar["url"] %>" target="_blank">
+  <a href="<%= @bar.url %>" target="_blank">
     <div id="bar">
       <div><i class="fa fa-glass fa-4x"></i></div>
-      <h3><%= @bar["name"].upcase %></h3>
+      <h3><%= @bar.name.upcase %></h3>
     </div>
   </a>
 </div>
